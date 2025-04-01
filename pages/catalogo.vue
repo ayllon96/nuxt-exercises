@@ -5,7 +5,11 @@
   </header>
 </template>
 
-<script setup></script>
+<script setup>
+definePageMeta({
+  layout: "catalog",
+});
+</script>
 
 <style lang="scss" scoped>
 $colors: (
@@ -21,31 +25,32 @@ $colors: (
 .nav {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex start;
   justify-content: center;
-  height: 100vh;
-  background-color: map-get($colors, light);
+  background-color: map.get($colors, light);
+  padding: 1.5em;
 
   &__title {
     font-size: 2rem;
-    color: map-get($colors, primary);
+    color: map.get($colors, primary);
     margin-bottom: 1rem;
   }
 
   &__button {
     display: inline-block;
     padding: 0.5rem 1rem;
-    background-color: map-get($colors, primary);
+    background-color: map.get($colors, primary);
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
     text-decoration: none;
+    max-width: 4em;
 
     &:hover {
-      background-color: map-get($colors, dark);
-      color: map-get($colors, light);
+      background-color: map.get($colors, dark);
+      color: map.get($colors, light);
     }
   }
 }
